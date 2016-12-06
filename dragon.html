@@ -13,8 +13,11 @@
 	.margin-bottom{
 		margin-bottom: 20px;
 	}
+	.margin-left{
+		margin-left:  60px;
+	}
 	.imageborder{
-		border: 1px solid #eee;
+		border: 2px solid #eee;
 		border-radius: 6px;
 	}
 	</style>
@@ -30,26 +33,26 @@
 			
 				<div class="row ">
 					<input class="btn btn-default btn-lg" type="button" onclick="fight();" value="I am DOVAHKIIN! Fight!">
-					<input class="btn btn-default btn-lg" type="button" onclick="flee();" value="No thanks, I'll jump behind those bushes and flee.">
+					<input class="btn btn-default btn-lg" type="button" onclick="flee();" value="No thanks. I'll jump behind those bushes and flee.">
 					
 				</div>
 			</div>
 
 			<div class="row">
-				<h3 class="bg-success" id="goodLuck"></p>
-				<h3 class="bg-danger" id="flee"></p>
+				<h3 class="bg-success" id="goodLuck"></h3>
+				<h3 class="bg-danger" id="flee"></h3>
 			</div>
 			<div class="row">
 				<img name="die1" src="d1.gif">
 				<img name="die2" src="d2.gif">
 
-				<input class="btn btn-default btn-lg" type="button" onclick="rollDice();" value="Roll the dice!">
+				<input class="btn btn-default btn-lg" type="button" onclick="rollDice();" value="FUS-RO-DAH! Roll the dice!">
 
 				<h3 class="pull-right" id="userRoll"></h3>
 			</div>
-			<div class="row margin-top margin-bottom">
-				<img class="col-xs-6 img-responsive imageborder" name="hero" src="hero.png">
-				<img class="col-xs-6 img-responsive imageborder" name="alduin" src ="alduin.png">
+			<div class="row margin-top margin-bottom text-center">
+				<img class="col-xs-5 img-responsive imageborder margin-left" name="hero" src="hero.png">
+				<img class="col-xs-5 img-responsive imageborder margin-left" name="alduin" src ="alduin.png">
 			</div>
 
 
@@ -66,7 +69,7 @@
 		}
 
 		function fight(){
-			document.getElementById('goodLuck').innerHTML = "Go ahead and roll the dice. Good luck!"
+			document.getElementById('goodLuck').innerHTML = "Go ahead and roll the dice. You must roll a 9 or higher or Alduin will burn you to a crisp. Good luck!"
 			document.getElementById('flee').innerHTML = ""
 		}
 
@@ -83,7 +86,7 @@
 
 			document.getElementById('userRoll').innerHTML = "You rolled: " + (randomDie1 + randomDie2)
 
-			if(randomDie1 + randomDie2 > 8){
+			if(randomDie1 + randomDie2 > 9){
 				document.images.alduin.src= "alduin_dead.png"
 				document.images.hero.src= "hero.png"
 			}else{
